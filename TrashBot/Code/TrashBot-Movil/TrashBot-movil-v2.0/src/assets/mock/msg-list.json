@@ -1,0 +1,17 @@
+{
+    "array":[
+      
+      {
+        "messageId":"2",
+        "userId":"trashbot",
+        "userName":"Trashbot",
+        "userImgUrl":"./assets/to-user.jpg",
+        "toUserId":"you",
+        "toUserName":"Tu",
+        "userAvatar":"./assets/to-user.jpg",
+        "time":1491034800000,
+        "message":"Hola en que puedo ayudarte?",
+        "status":"success"
+      }
+    ]
+  }

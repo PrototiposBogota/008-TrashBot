@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.mat-toolbar.mat-primary{
+    background: #128a12;
+}
+
+.mat-raised-button.mat-primary{
+    background-color:#128a12;
+}
+
+
+mat-card {
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+}
+.signin-content {
+  padding: 60px 1rem;
+}
+
+.full-width-input {
+  width: 100%;
+  
+}
+
+body{
+  margin: 0;
+}
+
+@mixin mat-input-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+
+  .mat-input-element:disabled {
+    color: mat-color($foreground, disabled-text);
+  }
+
+  .mat-input-element {
+    caret-color: mat-color($primary);
+
+    @include input-placeholder {
+      color: _mat-control-placeholder-color($theme);
+    }
+  }
+
+  .mat-accent .mat-input-element {
+    caret-color: mat-color($accent);
+  }
+
+  .mat-warn .mat-input-element,
+  .mat-form-field-invalid .mat-input-element {
+    caret-color: mat-color($warn);
+  }
+} 

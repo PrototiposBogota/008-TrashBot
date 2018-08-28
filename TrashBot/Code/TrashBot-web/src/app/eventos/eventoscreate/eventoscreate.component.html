@@ -1,0 +1,47 @@
+<div class="signin-content">  
+
+    <mat-card>
+        <mat-card-header>
+            
+        </mat-card-header>
+
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <p>Registrar Evento</p>
+    
+    <mat-form-field class="full-width-input">
+      <input matInput placeholder="Nombre..." formControlName="nombre" required>
+      <mat-error *ngIf="isFieldInvalid('nombre')">
+        Digite nombre del evento
+      </mat-error>
+    </mat-form-field>
+
+    
+    <mat-form-field class="full-width-input">
+      <input matInput placeholder="Direccion..." formControlName="lugar" required>
+      <mat-error *ngIf="isFieldInvalid('lugar')">
+        Digite su direccion
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width-input">
+      <input matInput placeholder="descripcion..." formControlName="descripcion" required>
+      <mat-error *ngIf="isFieldInvalid('descripcion')">
+        Digite su direccion
+      </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Seleccione una fecha" formControlName="fecha">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div>
+      <button mat-raised-button color="primary" type="submit">Registrar Evento</button>
+    </div>
+
+  </form>
+
+  </mat-card>
+</div>

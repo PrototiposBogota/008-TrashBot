@@ -1,0 +1,44 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons end *ngIf="showSkip">
+      <button ion-button (click)="startApp()" color="primary">Skip</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager>
+
+    <ion-slide>
+      <img src="assets/img/Avatar_Robot-512.png" class="slide-image"/>
+      <h2 class="slide-title">
+        BienVenido a: <b>TrashBot</b>
+      </h2>
+      <p>
+        La <b>ionic app</b> para aprender a reciclar
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/trash-icon3.png" class="slide-image"/>
+      <h2 class="slide-title" >Porque TrashBot?</h2>
+      <p><b>TrashBot </b> es una aplicación creada por una necesidad presentada en la ciudad de Bogota.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/chatBot.png" class="slide-image"/>
+      <h2 class="slide-title">Que es TrashBot?</h2>
+      <p><b>TrashBot</b> es una palicación diseñada para que la comunidad aprenda facilmente a reciclar y este enterada de los eventos que se presentan en su localidad.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/trash-it-icon.png" class="slide-image"/>
+      <h2 class="slide-title">Estas listo para reciclar?</h2>
+      <button ion-button icon-end large clear (click)="startApp()">
+        Continue
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

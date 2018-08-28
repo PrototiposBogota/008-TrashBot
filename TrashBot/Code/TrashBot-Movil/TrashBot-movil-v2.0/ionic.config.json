@@ -1,0 +1,7 @@
+{
+  "name": "TrashBot-movil-v2.0",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

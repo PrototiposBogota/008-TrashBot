@@ -1,0 +1,161 @@
+/*Import fonts*/
+@import url('https://fonts.googleapis.com/css?family=Caveat|Gloria+Hallelujah|Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed');
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;  
+    color: #737F6D;
+    text-align: center;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 15px;
+}
+
+body
+{
+    background: linear-gradient(to left,#E6FFDA, #8FCC72);
+    padding: 20px;
+}
+
+header
+{
+    max-width: 400px;
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+
+main
+{
+    max-width: 1000px;
+    min-width: 250px;
+    background: white;
+    padding: 40px;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 8px;
+}
+
+main h3
+{
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 100;    
+    margin-top: 20px;
+    text-align: center;
+}
+
+.corpImages
+{
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.corpImages .images img
+{
+    width: 200px;
+    height: 200px;
+}
+
+
+
+#legend 
+{
+    margin-top: 40px;
+    width: 100%;    
+}
+
+#legend .containerForm
+{  
+    font-size: 20px;
+    text-align: left;
+    padding: 10px;
+}
+
+.containerFormInput
+{
+    width: 100%;  
+    margin-top: 6px;
+}
+
+.input
+{
+    width: 100%;  
+}
+
+#enter
+{       
+    color: white;
+    border-radius: 5px;
+    margin: auto;
+    padding: 5px;
+    width: 100%;
+    background-color: #8FCC72;
+    font-size: 18px;
+    transition: opacity 600ms;
+}
+
+#enterButton
+{
+    margin-top: 20px;     
+}
+
+
+#enter:hover
+{
+   opacity: 0.8;
+}
+
+#links
+{
+    margin-top: 15px;
+}
+
+footer
+{
+    margin-top: 20px;
+}
+
+@media screen  and (min-width: 600px)
+{
+    .corpImages
+    {
+        display: block;
+    }
+
+    #legend
+    {
+        display: flex;
+    }
+
+    #containerForm
+    {
+        max-width: 300px;
+        width: 100%;
+    }
+}
+
+@media screen  and (min-width: 800px)
+{
+    #containerForm
+    {
+        margin-top: 50px;
+    }
+    .corpImages
+    {        
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .corpImages .images img
+    {
+        width: 400px;
+        height: 400px;
+    }
+    
+    
+}

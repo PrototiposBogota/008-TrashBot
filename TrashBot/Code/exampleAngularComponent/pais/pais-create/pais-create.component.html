@@ -1,0 +1,108 @@
+<app-header></app-header>
+
+<div class="dashboard-content">
+	<div class="formularios">
+		<h3 *ngIf="! idPais">Crear Pais</h3>
+		<h3 *ngIf="idPais">Editar Pais</h3>
+
+		<form novalidate [formGroup]="paisForm" (ngSubmit)="onSubmit()">
+
+			<div class="rowforms">
+				<div class="sideform">
+					<div class="wrap-input">
+						<label class="elabel">Pais *</label> <input type="text" class="einput"
+							formControlName="nombre" #input (input)="input.value=$event.target.value.toUpperCase()">
+					</div>
+					<div class="alert alert-danger"
+						*ngIf="!paisForm.controls['nombre'].valid && paisForm.controls['nombre'].touched">
+						{{msgNombreRequerido}}
+					</div>
+				</div>
+
+				<div class="sideform">
+					<div class="wrap-input">
+						<label class="elabel">Sigla *</label> <input type="text" class="einput"
+							formControlName="sigla">
+					</div>
+					<div class="alert alert-danger"
+						*ngIf="!paisForm.controls['sigla'].valid && paisForm.controls['sigla'].touched">
+						{{msgSiglaRequerido}}
+					</div>
+					<div class="alert alert-danger"
+						*ngIf="paisForm.controls['sigla'].errors?.maxlength">
+						{{msgSiglaLength}}
+					</div>
+					<div class="alert alert-danger"
+						*ngIf="paisForm.controls['sigla'].errors?.minlength">
+						{{msgSiglaLength}}
+					</div>
+					<div class="alert alert-danger"
+						*ngIf="paisForm.controls['sigla'].errors?.pattern">
+						{{msgSiglaTexto}}
+					</div>
+				</div>
+			</div>
+
+			<div class="rowforms">
+				<div class="sideform">
+					<div class="wrap-input">
+						<label class="elabel">Indicativo de Pais *</label> <input type="text"
+							class="einput" formControlName="codMarcacion">
+					</div>
+					<div class="alert alert-danger"
+						*ngIf="!paisForm.controls['codMarcacion'].valid && paisForm.controls['codMarcacion'].touched">
+						{{msgCodigoRequerido}}
+					</div>
+					<div class="alert alert-danger"
+						*ngIf="paisForm.controls['codMarcacion'].errors?.maxlength">
+						{{msgCodigoLength}}
+					</div>
+					<div class="alert alert-danger"
+						*ngIf="paisForm.controls['codMarcacion'].errors?.minlength">
+						{{msgCodigoLength}}
+					</div>
+					<div class="alert alert-danger"
+						*ngIf="paisForm.controls['codMarcacion'].errors?.pattern">
+						{{msgCodigoNumerico}}
+					</div>
+				</div>
+
+				<div class="sideform">
+					<div class="wrap-input">
+						<label class="elabel">Tipo grupo territorial *</label> <select class="einput"
+							formControlName="tipoGrupoTer">
+							<option value="Departamento">Departamento</option>
+							<option value="Estado">Estado</option>
+						</select>
+					</div>
+					<div class="alert alert-danger"
+						*ngIf="!paisForm.controls['tipoGrupoTer'].valid && paisForm.controls['tipoGrupoTer'].touched">
+						{{msgTipoGrupoRequerido}}
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<div *ngIf="objectError.mensajeError != null"
+					class="alert alert-danger">{{objectError.mensajeError}}
+				</div>
+			</div>
+
+			<div *ngIf="objetoResponse != null" class="alert alert-success">
+				{{objetoResponse._body}}
+				<button type="button" class="btn btn-success float-right d-flex "
+					(click)="onReload()">Aceptar
+				</button>
+			</div>
+
+			<div class="botones">	
+				<button type="button" class="ebutton flatbutton"
+				(click)="redirectPaisPage()">Cancelar</button>
+			
+				<button type="submit" [disabled]="!paisForm.valid" class="ebutton mainbutton">Guardar</button>
+			</div>	
+
+
+		</form>
+	</div>
+</div>

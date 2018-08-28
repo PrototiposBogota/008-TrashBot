@@ -1,0 +1,33 @@
+<div class="chat-container">
+  <mat-list id="lista" #lista class="chat-list" ngx-auto-scroll lock-y-offset="10" observe-attributes>
+      <!-- <img mat-list-avatar *ngIf="message.action === undefined && message.from.name !!= 'Tu'" [src]="message.from.avatar">
+      <h4 mat-line *ngIf="message.action === undefined">
+        <b>{{message.from.name}}</b>
+      </h4> -->
+    <div *ngFor="let message of messages" >
+      <div>
+        <mat-card class="chat-card" [ngClass]="[(message.action === undefined && message.from.name === 'Tu')? 'verde': 'azul_claro']">
+          <mat-card-content style="text-align: right;">
+            <p *ngIf="message.cssclass === undefined" [ngClass]="[(message.action === undefined && message.from.name === 'Tu')? 'right': 'left']">
+              {{message.content}}
+            </p>
+            <div *ngIf="message.cssclass !!= undefined" class="papelera" [ngClass]="message.cssclass">
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-list>
+  <div class="chat-footer-container">
+    <mat-icon>message</mat-icon>
+    <mat-form-field class="chat-input">
+      <input matInput 
+      #inputMessage 
+      maxlength="140" 
+      placeholder="Escribe tu pregunta sobre reciclaje" 
+      [(ngModel)]="messageContent" 
+      (keyup.enter)="sendMessage(messageContent)">
+      <mat-hint align="end">{{inputMessage.value.length}}/140</mat-hint>
+    </mat-form-field>
+  </div>
+</div>

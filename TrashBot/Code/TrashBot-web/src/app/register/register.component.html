@@ -1,0 +1,51 @@
+<div class="signin-content">
+  <mat-card>
+      <mat-card-header>
+          
+      </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <p>Registrarse</p>
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="Nombre..." formControlName="userName" required>
+          <mat-error *ngIf="isFieldInvalid('userName')">
+            Digite su nombre
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Seleccione una fecha" formControlName="dateBorn">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="Direccion..." formControlName="address" required>
+          <mat-error *ngIf="isFieldInvalid('address')">
+            Digite su direccion
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="Email..." formControlName="email" required>
+          <mat-error *ngIf="isFieldInvalid('email')">
+            Digite su direccion
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput type="password" placeholder="Constraseña..." formControlName="password" required>
+          <mat-error *ngIf="isFieldInvalid('userName')">
+            Ingrese su contraseña
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput type="password" placeholder="Confirme su contraseña..." formControlName="passwordConfirm" required>
+          <mat-error *ngIf="isFieldInvalid('passwordConfirm')">
+            Digite la contraseña
+          </mat-error>
+        </mat-form-field>
+      
+
+        <button mat-raised-button color="primary" type="submit">Registrarse</button>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

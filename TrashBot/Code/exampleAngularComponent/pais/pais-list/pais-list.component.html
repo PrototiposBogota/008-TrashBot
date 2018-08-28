@@ -1,0 +1,72 @@
+<app-header></app-header>
+
+<div class="dashboard-content">
+
+	<div class="tablas">
+
+		<div class="tablashead"  >					
+			<p class="titleform">Paises</p>
+			<div class="col-sm-12 col-md-5" style="margin-top: 7px">
+				<input type="text" class="form-control" name="searchText" placeholder="Buscar..." [(ngModel)]="searchText">
+			</div>
+			<button *ngIf="mapConfigXPerfil.get('pais/pais-create')" id="additem" type="button" class="addnew" routerLink="/pais/pais-create" ><span class="hidden-sm hidden-md hidden-lg">+</span><span class="hidden-xs">Agregar nuevo</span></button>
+		</div>
+		
+		<div class="table-responsive">
+
+			<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Nombre</th>
+						<th>Sigla</th>
+						<th>Indicativo de Pais</th>
+						<th>Tipo grupo territorial</th>
+						<th>Opciones</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let pais of paises | searchfilter: searchText">
+						<th><div class="mobilabel">idPerfil:</div><span>{{pais.idPais}}</span></th>
+						<td><div class="mobilabel">idPerfil:</div><span>{{pais.nombre}}</span></td>
+						<td><div class="mobilabel">idPerfil:</div><span>{{pais.sigla}}</span></td>
+						<td><div class="mobilabel">idPerfil:</div><span>{{pais.codMarcacion}}</span></td>
+						<td><div class="mobilabel">idPerfil:</div><span>{{pais.tipoGrupoTer}}</span></td>
+						
+						<td class="optionstd"><div class="mobilabel">Opciones:</div>
+							<span>
+							
+								<i *ngIf="mapConfigXPerfil.get('updatePais')" class="options-icon icon-pencil" title="editar" data-toggle="modal" (click)="editPaisPage(pais)"></i>
+								<i *ngIf="mapConfigXPerfil.get('deletePais')" class="options-icon icon-trash" title="eliminar" data-toggle="modal" data-target="#confirm-delete" (click)="openDialog(pais)"></i>
+								<i *ngIf="mapConfigXPerfil.get('deletePais')" class="options-icon icon-calendar-full" title="Festivos" (click)="editFestivoXPais(pais)"></i>
+							</span>
+						
+						</td>
+
+					</tr>
+				</tbody>
+			</table>
+		
+		</div>
+	</div>
+	<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">Eliminar Parametro</h4>
+				</div>
+				<div class="modal-body">
+					<p>Esta seguro de eliminar el Pais {{getNombrePais()}} ?</p>
+							<div *ngIf="objectError.mensajeError != null" class="alert alert-danger">{{objectError.mensajeError}}</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-danger btn-ok" (click)="deletePais(parametro)">Borrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div >
+			<div *ngIf="objectError.mensajeError != null" class="alert alert-danger">{{objectError.mensajeError}}</div>
+	</div>
+</div>

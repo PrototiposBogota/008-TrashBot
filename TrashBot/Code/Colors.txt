@@ -1,0 +1,4 @@
+7BB062 Logo main
+E6FFDA main color
+8FCC72 second color
+737F6D font color
