@@ -19,5 +19,5 @@ ionic serve --lab
 ### Demo
   Puedes iniciar sesión en la aplicación móvil con las siguientes credenciales:
 
-    - Usuario:  test@example.com
-    - Contraseña: **test**
+  - Usuario:  test@example.com
+  - Contraseña: **test**
