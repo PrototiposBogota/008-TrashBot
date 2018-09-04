@@ -11,7 +11,7 @@ module Api
                 @mensaje = mensaje_params
 
                 t1 = Time.now
-                url = URI("https://trashbot-node.herokuapp.com/api/message")
+                url = URI(ENV["api_watson"])
 
                 http = Net::HTTP.new(url.host, url.port)
                 http.use_ssl = true
@@ -30,6 +30,19 @@ module Api
                 # puts "\n"
 
                 puts estadisticas
+
+                estadisticas.each do |key, value|
+                    
+                    est = Estadistica.where({name: key}).take
+                    if est
+                        est.counter += value
+                        est.save 
+                    else
+                        estadistica = Estadistica.new({name: key, counter: value, description: key})
+                        estadistica.save 
+                    end
+                end
+
 
                 # puts response
 

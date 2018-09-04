@@ -56,3 +56,5 @@ gem 'jwt'
 gem 'simple_command'
 gem 'rest-client'
 
+gem 'figaro'
+gem 'appengine', '~> 0.4.5'

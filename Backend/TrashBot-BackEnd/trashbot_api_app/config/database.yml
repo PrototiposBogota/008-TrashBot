@@ -23,9 +23,10 @@ default: &default
 
 development:
   <<: *default
-  database: api-test_development
-  username: postgres
-  password: postgres123
+  database: <%= ENV["database_name"] %>
+  username: <%= ENV["database_user"] %>
+  password: <%= ENV["database_pass"] %>
+  host: <%= ENV["database_host"] %>
 #  password: 1019R@miro
 
   # The specified database role being used to connect to postgres.
@@ -83,6 +84,9 @@ test:
 #
 production:
   <<: *default
-  database: api-test_production
-  username: api-test
-  password: <%= ENV['API-TEST_DATABASE_PASSWORD'] %>
+  pool: 5
+  timeout: 5000
+  database: <%= ENV["database_name"] %>
+  username: <%= ENV["database_user"] %>
+  password: <%= ENV["database_pass"] %>
+  host: <%= ENV["database_host"] %>
