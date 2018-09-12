@@ -40,7 +40,9 @@ export class SpeakerListPage {
   ) {}
 
   ionViewDidLoad() {
+
     this.confData.getSpeakers().subscribe((speakers: any[]) => {
+      debugger;
       this.speakers = speakers;
     });
   }
