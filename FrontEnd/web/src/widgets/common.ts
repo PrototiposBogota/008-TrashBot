@@ -10,7 +10,7 @@ interface IMessage{
 }
 
 export interface ILoginProps {
-    classes: any;
+    // classes: any;
     login: (usuario: ILoginState) => void
 }
 

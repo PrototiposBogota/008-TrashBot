@@ -10,7 +10,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import * as React from 'react';
 
 import Home from './Home';
-import Login from './Login';
+import Index from './Index';
+// import Login from './Login';
 import SideMenu from './SideMenu';
 
 import {API} from '../service/backend';
@@ -124,7 +125,8 @@ class MenuAppBar extends React.Component<Props> {
         <div className={classes.container}>
         {
           !auth?(
-            <Login login={this.login} />
+            // <Login login={this.login} />
+            <Index login={this.login}/>
           ) 
           : <Home page={this.state.activePage}/>
         }
