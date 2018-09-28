@@ -23,6 +23,7 @@ export class UserData {
   //private apiUrl = 'http://localhost:3000';
   private apiUrl = 'https://trashbot-2018.appspot.com';
 
+
   constructor(
     public events: Events,
     public storage: Storage,
