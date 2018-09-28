@@ -1,1 +1,1 @@
-[{"outputType":{"type":"APK"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":13},"path":"app-arm64-debug.apk","properties":{"packageId":"io.ionic.conferenceapp","split":"","minSdkVersion":"19"}}]
+[{"outputType":{"type":"APK"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":12},"path":"app-armv7-debug.apk","properties":{"packageId":"io.ionic.conferenceapp","split":"","minSdkVersion":"19"}}]
