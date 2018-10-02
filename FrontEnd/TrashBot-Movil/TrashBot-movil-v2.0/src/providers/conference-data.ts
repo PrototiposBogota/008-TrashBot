@@ -14,11 +14,11 @@ export class ConferenceData {
   data: any;
   private apiUrl = 'https://trashbot-2018.appspot.com/api/v1';
 
-  private headers = new Headers({
+  /* private headers = new Headers({
     'Content-Type': 'application/json',
     'Authorization': localStorage.getItem('token')
   });
-
+ */
   constructor(public http: Http, public user: UserData) { }
 
   load(): any {
@@ -138,7 +138,13 @@ export class ConferenceData {
 
   getSpeakers(): Observable<any>  {
     debugger;
-    return this.http.get(this.apiUrl + '/eventos', { headers: this.headers })
+
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': localStorage.getItem('token')
+    });
+
+    return this.http.get(this.apiUrl + '/eventos', { headers: headers })
           .map((res: Response) =>  {
             debugger;
               return res.json();
