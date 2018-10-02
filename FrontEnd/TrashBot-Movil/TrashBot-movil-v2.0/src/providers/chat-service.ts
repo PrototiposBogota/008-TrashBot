@@ -61,7 +61,8 @@ export class ChatService {
       'Authorization': localStorage.getItem('token') || ''
   });
 
-  let apiUrl = 'https://trashbot-api.herokuapp.com/api/v1/chats'
+  /* let apiUrl = 'https://trashbot-api.herokuapp.com/api/v1/chats' */
+  let apiUrl = 'https://trashbot-2018.appspot.com/api/v1/chats';
 
   return this.http.post(apiUrl, msj, { headers: headers }).toPromise()
     .then((res: Array<string>)=>{
