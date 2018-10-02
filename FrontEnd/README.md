@@ -5,7 +5,7 @@
     - Producción: **https://web-dot-trashbot-2018.appspot.com/**
 
 - Lenguaje de desarrollo : 
-TrashBot en su versión web inicialmente fue construida en Angular6. Posteriormente, nos dimos cuenta que es mucho más económico (despliegue y hospedaje), más fácil de desarrollar y adecuada a los requermientos planteados construirla en React, por lo tanto, la versión en Producción está desarollada en esta librería.
+TrashBot en su versión web inicialmente fue construida en Angular6. Posteriormente, nos dimos cuenta que es mucho más económico (despliegue y hospedaje), más fácil de desarrollar y adecuada a los requerimientos planteados construirla en React, por lo tanto, la versión en Producción está desarrollada en esta librería.
 
     La versión móvil está desarrollada en Ionic3.
 
