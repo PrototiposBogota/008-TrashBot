@@ -1,17 +1,23 @@
 import { Injectable } from '@angular/core';
-
-import { Http } from '@angular/http';
-
 import { UserData } from './user-data';
-
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/of';
+import {Http, Response, Headers} from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 
 @Injectable()
 export class ConferenceData {
   data: any;
+  private apiUrl = 'https://trashbot-2018.appspot.com/api/v1';
+
+  private headers = new Headers({
+    'Content-Type': 'application/json',
+    'Authorization': localStorage.getItem('token')
+  });
 
   constructor(public http: Http, public user: UserData) { }
 
@@ -130,14 +136,32 @@ export class ConferenceData {
     session.hide = !(matchesQueryText && matchesTracks && matchesSegment);
   }
 
-  getSpeakers() {
-    return this.load().map((data: any) => {
+  getSpeakers(): Observable<any>  {
+    debugger;
+    return this.http.get(this.apiUrl + '/eventos', { headers: this.headers })
+          .map((res: Response) =>  {
+            debugger;
+              return res.json();
+          })
+          .catch((error: any) => {
+            return this.handleError(error);
+          });
+
+
+    /* return this.load().map((data: any) => {
       return data.speakers.sort((a: any, b: any) => {
         let aName = a.name.split(' ').pop();
         let bName = b.name.split(' ').pop();
         return aName.localeCompare(bName);
       });
-    });
+    }); */
+  }
+
+  handleError(error) {
+    // debugger;
+    console.error('error',error);
+    debugger;
+    return Observable.throw(error.json().error || 'Server error');
   }
 
   getTracks() {

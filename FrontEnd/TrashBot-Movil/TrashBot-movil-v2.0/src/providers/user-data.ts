@@ -21,7 +21,8 @@ export class UserData {
   HAS_LOGGED_IN = 'hasLoggedIn';
   HAS_SEEN_TUTORIAL = 'hasSeenTutorial';
   //private apiUrl = 'http://localhost:3000';
-  private apiUrl = 'https://trashbot-api.herokuapp.com';
+  private apiUrl = 'https://trashbot-2018.appspot.com';
+
 
   constructor(
     public events: Events,

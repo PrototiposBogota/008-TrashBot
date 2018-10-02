@@ -8,11 +8,11 @@ import { Storage } from '@ionic/storage';
 import { AboutPage } from '../pages/about/about';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
-import { MapPage } from '../pages/map/map';
+/* import { MapPage } from '../pages/map/map'; */
 import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs-page/tabs-page';
 import { TutorialPage } from '../pages/tutorial/tutorial';
-import { SchedulePage } from '../pages/schedule/schedule';
+/* import { SchedulePage } from '../pages/schedule/schedule'; */
 import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
 import { SupportPage } from '../pages/support/support';
 import { ChatModule } from "../pages/chat/chat.module";
@@ -47,9 +47,9 @@ export class ConferenceApp {
   ];
 
   appPagesIn: PageInterface[] = [
-    { title: 'Calendario', name: 'Schedule', component: SchedulePage, icon: 'calendar' },
+    /* { title: 'Calendario', name: 'Schedule', component: SchedulePage, icon: 'calendar' }, */
     { title: 'Eventos', name: 'SpeakerList', component: SpeakerListPage, icon: 'contacts' },
-    { title: 'Map', name: 'Map', component: MapPage, icon: 'map' },
+   /*  { title: 'Map', name: 'Map', component: MapPage, icon: 'map' }, */
     { title: 'About', name: 'About', component: AboutPage, icon: 'information-circle' },
     { title: 'Chat', name: 'chatPage', component: ChatModule, icon: 'chatboxes' }
   ];
