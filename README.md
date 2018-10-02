@@ -3,8 +3,7 @@
 - Reto: **¿Cómo podemos mótivar a los habitantes de la localidad a recolectar adecuadamente las basuras?**
 - Localidad: Chapinero.
 - URL: 
-    - Q.A.: **https://trashbot-web.herokuapp.com**
-    - Producción: **https://web-dot-trashbot-2018.appspot.com/**
+    **https://web-dot-trashbot-2018.appspot.com/**
 
 ### Participantes
 - **Oscar Rodriguez**.

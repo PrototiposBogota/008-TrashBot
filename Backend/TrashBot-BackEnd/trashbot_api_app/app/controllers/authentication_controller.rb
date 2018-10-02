@@ -6,7 +6,6 @@ class ApplicationController < ActionController::API
     
     include ExceptionHandler
 
-    # [...]
     private
     def authenticate_request
       @current_user = AuthorizeApiRequest.call(request.headers).result

@@ -1,12 +1,7 @@
 module Api
     module V1
         class EstadisticasController < ApplicationController
-            def index
-                @estadisticas = Estadistica.order('description DESC')
-
-                render json: @estadisticas
-            end
-
+            
             def create
                 @estadistica = Estadistica.new(estadistica_params)
                 if @estadistica.save

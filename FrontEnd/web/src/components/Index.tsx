@@ -3,6 +3,8 @@ import '../styles/index.css';
 import { ILoginProps } from '../widgets/common';
 import Login from './Login';
 
+import Charts from './Charts';
+
 class Index extends React.Component<ILoginProps> {
 
     public render() {
@@ -72,7 +74,7 @@ class Index extends React.Component<ILoginProps> {
                         <div className="gallery-item-six" />
 
                     </div>
-
+                    <Charts />
                     <section>
                         <h2>Our Mission</h2>
                         <div>

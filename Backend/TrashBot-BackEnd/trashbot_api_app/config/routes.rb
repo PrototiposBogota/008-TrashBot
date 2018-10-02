@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   post 'auth/register', to: 'users#register'
   post 'auth/login', to: 'users#login'
   get 'test', to: 'users#test'
+  get '/stats/reciclar', to: 'stats#reciclar'
+  get '/stats/definiciones', to: 'stats#definiciones'
 
   namespace 'api' do
     namespace 'v1' do
-      get 'chats/estadisticas', to: 'chats#get_estadisticas'
       resources :eventos
       resources :chats
     end
