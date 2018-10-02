@@ -97,7 +97,7 @@ signup(register: RegisterObj): Observable<RegisterObj> {
       'Content-Type': 'application/json'
   });
   // debugger;
-  console.log("entro savePais");
+  
   return this.http.post(this.apiUrl + '/auth/register', register, { headers: headers })
       .map((res: Response) =>  {
           localStorage.setItem('xInitToken', res.headers.get('initToken'));
@@ -108,8 +108,6 @@ signup(register: RegisterObj): Observable<RegisterObj> {
       });
 
 } 
-
-
 
 
   logout(): void {
