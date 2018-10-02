@@ -15,7 +15,7 @@ TrashBot es un Chatbot desarrollado con Inteligencia Artificial, que puede ayuda
 
 Asimismo, puedes programar y consultar los próximos eventos relacionados con la recolección de desechos.
 
-### Para que te puede servir TrashBot?
+### ¿Para qué te puede servir TrashBot?
 
 - Chat **24/7** (24 horas los 7 días de la semana) completamente autónomo para ayudarte con la clasificación de residuos.
 - Programación de eventos relacionados con el reciclaje y recolección de basuras.
