@@ -11,7 +11,7 @@
 - **Ramiro Contreras**.
 
 ### Descripción
-TrashBot cuenta con un chat inteligente, que puede ayudarte con la clasificiación de los residuos, para que logres recolectar y clasificar mejor las basuras. 
+TrashBot es un Chatbot desarrollado con Inteligencia Artificial, que puede ayudarte con la clasificiación de los residuos, para que logres recolectar y clasificar mejor las basuras.
 
 Asimismo, puedes programar y consultar los próximos eventos relacionados con la recolección de desechos.
 
