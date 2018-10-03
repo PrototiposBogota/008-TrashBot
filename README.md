@@ -11,7 +11,8 @@
 - **Ramiro Contreras**.
 
 ### Descripción
-**TrashBot** es un Chatbot desarrollado con la Inteligencia Artificial de IBM Watson, que puede ayudarte con la clasificiación de los residuos, para que aprendas a recolectar y disponer eficientemente las basuras.
+**TrashBot** es un Chatbot desarrollado con la Inteligencia Artificial de IBM Watson, que puede ayudarte con la clasificiación de los residuos, para que aprendas a recolectar y disponer eficientemente las basuras. Puedes realizarle preguntas en lenguaje natural como si tuvieras a una persona del otro lado respondiendo a tus inquietudes.
+
 
 **TrashBot conoce términos:**
 
@@ -21,6 +22,7 @@ TrashBot está en capacidad de responder a las preguntas o inquietudes que tenga
    - Explícame qué es compostaje, 
    - Define residuo,
    - Entre otras.
+
 
 **TrashBot sabe cómo desechar los materiales:**
 
@@ -32,6 +34,7 @@ TrashBot conoce las normas vigentes de reciclaje que aplican si estás en tu cas
 Además, si no tienes claro como debes separar los materiales en cada una de las bolsas, puedes recurrir a él y preguntarle, por ejemplo:
    - ¿Cuáles residuos van en la bolsa blanca?
    - ¿Qué debo desechar en la bolsa roja? 
+
 
 **Eventos:**
 
