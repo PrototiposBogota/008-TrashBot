@@ -1,5 +1,5 @@
 export enum Page {
-    Eventos, Chat
+    Eventos, Chat, Register, ForgotPassword, Landing
 }
 
 interface IMessage{
@@ -9,8 +9,30 @@ interface IMessage{
     isTrash: boolean
 }
 
+export interface IUserToRegister {
+    name: string,
+    email: string,
+    password: string,
+    direccion: string,
+    fecha: string
+}
+
+export interface IHomeProps{
+    page : Page,
+    register: (newUser: IUserToRegister) => void
+}
+
+export interface IClassesProps {
+    classes: any;
+}
+
+export interface IRegisterProps {
+    classes: any;
+    register: (newUser: IUserToRegister) => void
+}
+
 export interface ILoginProps {
-    // classes: any;
+    goToRegister: () => void    
     login: (usuario: ILoginState) => void
 }
 

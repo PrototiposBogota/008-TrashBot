@@ -157,8 +157,8 @@ main {
 
 main section {
   width: 70%;
-  padding: 90px 0;
-  margin: 50px auto 150px auto;
+  padding: 50px 0;
+  margin: 50px auto 100px auto;
   display: grid;
   grid-template-columns: 2fr 3fr;
   align-items: center;
@@ -166,10 +166,10 @@ main section {
 }
 
 main section h2 {
-  font-size: 4.3rem;
+  font-size: 3.3rem;
   color: #ddd;
   text-transform: uppercase;
- line-height: 4.2rem; 
+ line-height: 3.2rem; 
  padding-right: 10px;
  border-right: 3px solid #ddd;
 }
@@ -293,7 +293,7 @@ main section form {
   margin: 0;
 }
 main section h2 {
-  font-size: 3rem;
+  font-size: 2.5em;
 }
 
 main section form div {

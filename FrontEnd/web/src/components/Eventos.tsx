@@ -8,6 +8,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
+import {IClassesProps} from '../widgets/common';
+
 const styles = theme => ({
     demo: {
         backgroundColor: theme.palette.background.paper,
@@ -22,11 +24,9 @@ const styles = theme => ({
     },
 });
 
-export interface IEventosProps {
-    classes: any;
-}
 
-class Eventos extends React.Component<IEventosProps> {
+
+class Eventos extends React.Component<IClassesProps> {
 
     public state = {
         secondary: false,
