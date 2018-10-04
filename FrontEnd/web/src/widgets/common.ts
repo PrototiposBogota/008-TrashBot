@@ -26,6 +26,25 @@ export interface IClassesProps {
     classes: any;
 }
 
+export interface IEventsState {
+    id?: number,
+    nombre?: string,
+    lugar?: string,
+    descripcion?: string,
+    fecha?: string,
+    hora?: string,
+    cards: any[]
+}
+
+
+export interface IEventProps {
+    classes: any,
+    title: string,
+    place: string,
+    date: string,
+    description: string
+}
+
 export interface IRegisterProps {
     classes: any;
     register: (newUser: IUserToRegister) => void

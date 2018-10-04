@@ -1,103 +1,69 @@
 import * as React from 'react';
 
-import Grid from '@material-ui/core/Grid';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-// import Paper from '@material-ui/core/Paper';
-import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
+import classNames from 'classnames';
 
-import {IClassesProps} from '../widgets/common';
+import Grid from '@material-ui/core/Grid';
+import { withStyles } from '@material-ui/core/styles';
+
+import { IClassesProps, IEventsState } from '../widgets/common';
+import CardEvent from './CardEvent';
+
+import { API } from '../service/backend';
+
 
 const styles = theme => ({
-    demo: {
-        backgroundColor: theme.palette.background.paper,
+    cardGrid: {
+        padding: `${theme.spacing.unit * 8}px 0`,
     },
-    root: {
-        display: 'flex',
-        flexGrow: 1,
-        maxWidth: '100%',
-    },
-    title: {
-        margin: `${theme.spacing.unit * 4}px 0 ${theme.spacing.unit * 2}px`,
+    layout: {
+        marginLeft: theme.spacing.unit * 3,
+        marginRight: theme.spacing.unit * 3,
+        width: 'auto',
+        [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            width: 1100,
+        },
     },
 });
 
 
 
-class Eventos extends React.Component<IClassesProps> {
+class Eventos extends React.Component<IClassesProps, IEventsState> {
+    constructor(props) {
+        super(props);
+        this.state = { cards: [] };
+    }
 
-    public state = {
-        secondary: false,
-    };
+    public componentDidMount() {
+
+        API.getNextEvents().then(data => {
+            this.setState({cards: data})
+        });
+    }
 
     public render() {
 
         const { classes } = this.props;
-        const { secondary } = this.state;
+
+        const {cards} = this.state;
 
         return (
             <div>
 
                 <h2>Próximos eventos</h2>
 
-                
-
-                <div className={classes.root}>
-
-                    <Grid container={true} spacing={16}>
-                        <Grid item={true} xs={12} md={6}>
-                            <Typography variant="title" className={classes.title}>
-                                Text only
-                        </Typography>
-                            <div className={classes.demo}>
-                                <List >
-                                    <ListItem>
-                                        <ListItemText
-                                            primary="Single-line item"
-                                            secondary={secondary ? 'Secondary text' : ''}
-                                        />
-                                    </ListItem>
-                                </List>
-                            </div>
-                        </Grid>
-                    </Grid>
-
-                    <Grid container={true} spacing={16}>
-                        <Grid item={true} xs={12} md={6}>
-                            <Typography variant="title" className={classes.title}>
-                                Text only
-                        </Typography>
-                            <div className={classes.demo}>
-                                <List >
-                                    <ListItem>
-                                        <ListItemText
-                                            primary="Single-line item"
-                                            secondary={secondary ? 'Secondary text' : ''}
-                                        />
-                                    </ListItem>
-                                </List>
-                            </div>
-                        </Grid>
-                    </Grid>
-
-                    <Grid container={true} spacing={16}>
-                        <Grid item={true} xs={12} md={6}>
-                            <Typography variant="title" className={classes.title}>
-                                Text only
-                        </Typography>
-                            <div className={classes.demo}>
-                                <List >
-                                    <ListItem>
-                                        <ListItemText
-                                            primary="Single-line item"
-                                            secondary={secondary ? 'Secondary text' : ''}
-                                        />
-                                    </ListItem>
-                                </List>
-                            </div>
-                        </Grid>
+                <div className={classNames(classes.layout, classes.cardGrid)}>
+                    <Grid container={true} spacing={40}>
+                        {cards.map((card) => (
+                            <Grid item={true} key={card.id} sm={6} md={4} lg={3}>
+                                <CardEvent
+                                    title={card.nombre}
+                                    date={`${card.fecha} ${card.hora}`}
+                                    place={card.lugar}
+                                    description={card.descripcion} />
+                            </Grid>
+                        ))}
                     </Grid>
                 </div>
             </div>

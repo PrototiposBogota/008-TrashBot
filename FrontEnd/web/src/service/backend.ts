@@ -24,6 +24,24 @@ export const API = {
         });
     },
 
+    getNextEvents(){
+        return fetch(`${API_URL}/eventos`, {
+            headers: {
+                'Authorization': sessionStorage.getItem('token') || '',
+                "Content-Type": "application/json; charset=utf-8"
+            },
+        }).then(response => {
+            if(response.ok) {
+                return response.json()
+            }else{
+                throw new Error('Something bad happened' + response.status)
+            }
+        })
+        .catch((error)=> {
+            throw new Error('Something bad happened' + error)
+        });
+    },
+
     login(usuario:ILoginState) {
         
         return fetch(API_AUTH + '/auth/login', {
