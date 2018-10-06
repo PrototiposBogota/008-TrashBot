@@ -38,13 +38,13 @@ class Charts extends React.Component {
             // tslint:disable:jsx-self-close
             <div>
                 <section>
-                    <h4>¿Qué reciclan/desechan los usuarios de Trashbot?</h4>
-                    <div id="chartMaterials" style={{ width: "100%", height: "500px" }}></div>
+                    <h4 className="title-section h4">¿Qué reciclan o desechan los usuarios de Trashbot?</h4>
+                    <div id="chartMaterials" style={{ width: "100%", height: "380px" }}></div>
                 </section>
 
                 <section>
-                    <h2>¿Cúales son las definiciones más buscadas en Trashbot?</h2>
-                    <div id="chartDefinitions" style={{ width: "100%", height: "500px" }}></div>
+                    <h4 className="title-section h4">¿Cúales son las definiciones más buscadas en Trashbot?</h4>
+                    <div id="chartDefinitions" style={{ width: "100%", height: "380px" }}></div>
                 </section>
 
             </div>
@@ -78,6 +78,27 @@ class Charts extends React.Component {
         chart.innerRadius = am4core.percent(40);
 
         chart.responsive.enabled = true;
+
+        const rule : am4core.IResponsiveRule = {
+            relevant: (target: am4core.Container) =>{
+                if(target.pixelWidth < 400)
+                    {return true;}
+
+                return false;
+            },
+            state: (target: am4core.Sprite, stateId: string) =>{
+                const state = target.states.create(stateId);
+                if (target instanceof am4charts.Legend) {
+                    target.position = "bottom";
+                    state.properties.paddingTop = 0;
+                    state.properties.paddingRight = 0;
+                    state.properties.paddingBottom = 0;
+                    state.properties.paddingLeft = -100;
+                }
+                return state;
+            }
+        }
+        chart.responsive.rules.push(rule);
 
         return chart;
     }

@@ -4,7 +4,7 @@ body {
   font-family: Raleway;
   background: #eee;
   color: #111;
-
+  font-size: 18px;
 }
 body * {
   transition: all 0.300s ease-in-out;
@@ -157,7 +157,6 @@ main {
 
 main section {
   width: 70%;
-  padding: 50px 0;
   margin: 50px auto 100px auto;
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -165,15 +164,19 @@ main section {
 
 }
 
-main section h2 {
+main section h2, .title-section {
   font-size: 3.3rem;
-  color: #ddd;
-  text-transform: uppercase;
- line-height: 3.2rem; 
- padding-right: 10px;
- border-right: 3px solid #ddd;
+  color: rgb(109, 134, 114);
+  line-height: 3.2rem; 
+  padding-right: 10px;
+  border-right: 3px solid #ddd;
 }
 
+main section .h4{
+  font-size: 2rem;
+  line-height: 2.2rem;
+  padding-right: 8px;
+}
 
 
 main section div {

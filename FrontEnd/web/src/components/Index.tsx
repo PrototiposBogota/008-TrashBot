@@ -27,7 +27,13 @@ class Index extends React.Component<ILoginProps> {
                     <section className="intro">
                         <h2>Recicla de forma correcta</h2>
                         <div>
-                            <p>Con TrashBot puedes realizar una mejor clasificiación de residuos. Te puede orientar en las canecas o papeleras de acuerdo al ártículo o elemento que deseas desechar, unicamente escríbele y pregúntale donde desecharlo.</p>
+                            <p>TrashBot es un Chatbot desarrollado con la Inteligencia Artificial de IBM Watson,
+                                que puede ayudarte con la clasificiación de los residuos, para que aprendas a recolectar
+                                y disponer eficientemente las basuras. </p>
+                            <p>
+                                Puedes realizarle preguntas en lenguaje natural y
+                                como si una fuera persona responderá a tus inquietudes.
+                            </p>
                         </div>
                     </section>
 
@@ -64,19 +70,39 @@ class Index extends React.Component<ILoginProps> {
                     </div>
 
                     <section>
-                        <h2>¿Qúe sabe TrashBot?</h2>
+                        <h2>¿Qúe sabe o conoce TrashBot?</h2>
                         <div>
-                            <p>TrashBot conoce las normas vigentes de reciclaje que aplican si estás en tu casa, 
-                                oficina o estás en la calle; él te puede responder las dudas que tengas cuando 
-                                quieres reciclar algún material, por ejemplo: Quiero reciclar papel en mi casa, 
-                                deseo desechar vidrio, deseo desechar plásticos.
+                            <h4>TrashBot conoce términos</h4>
+                            <p>TrashBot está en capacidad de responder a las preguntas o inquietudes que tengas
+                                relacionadas con el reciclaje, como por ejemplo:
                             </p>
+                            <ul>
+                                <li>¿Qué es reciclaje?</li>
+                                <li>¿En qué consiste la recolección?</li>
+                                <li>Explícame qué es compostaje</li>
+                                <li>Define residuo</li>
+                                <li>Entre otras.</li>
+                            </ul>
+                            <h4>TrashBot sabe cómo desechar los materiales</h4>
+                            <p>TrashBot conoce las normas vigentes de reciclaje que aplican si estás en tu casa,
+                                oficina o estás en la calle; él te puede responder las dudas que tengas cuando
+                                quieres reciclar algún material, por ejemplo:
+                            </p>
+                            <ul>
+                                <li>Quiero reciclar papel en mi casa.</li>
+                                <li>Deseo desechar vidrio.</li>
+                                <li>Deseo reciclar plásticos.</li>
+                                <li>Entre otras.</li>
+                            </ul>
                             <p>
-                                Además, si no tienes claro que va dentro cada una de las bolsas, puedes recurrir 
-                                a él y preguntarle, por ejemplo: ¿Cuáles residuos van en la bolsa blanca? 
-                                ¿Qué debo desechar en la bolsa roja?
+                                Además, si no tienes claro como debes separar los materiales en cada una de las bolsas,
+                                puedes recurrir a él y preguntarle, por ejemplo:
                             </p>
- 
+                            <ul>
+                                <li>¿Cuáles residuos van en la bolsa blanca?</li>
+                                <li>¿Qué debo desechar en la bolsa roja?</li>
+                            </ul>
+
                         </div>
                     </section>
 
@@ -96,10 +122,10 @@ class Index extends React.Component<ILoginProps> {
                         <div className="gallery-item-six" />
 
                     </div>
-                    
-                    
 
-                    
+
+
+
                 </main>
 
 
