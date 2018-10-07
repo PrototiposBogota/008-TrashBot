@@ -13,6 +13,9 @@
 ### Descripción
 **TrashBot** es un Chatbot desarrollado con la Inteligencia Artificial de IBM Watson, que puede ayudarte con la clasificiación de los residuos, para que aprendas a recolectar y disponer eficientemente las basuras. Puedes realizarle preguntas en lenguaje natural como si tuvieras a una persona del otro lado respondiendo a tus inquietudes.
 
+<img src="https://storage.googleapis.com/trashbot-react-build/gifs/cartones.gif"
+     alt="Donde se desecha el cartón"
+     style="float: left;" />
 
 **TrashBot conoce términos:**
 
