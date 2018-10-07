@@ -11,6 +11,7 @@ am4core.useTheme(am4themes_animated);
 class Charts extends React.Component {
     public chartMaterials: am4charts.PieChart3D;
     public chartDefinitions: am4charts.PieChart3D;
+    public chartOperators: am4charts.PieChart3D;
 
     public componentDidMount() {
 
@@ -21,6 +22,10 @@ class Charts extends React.Component {
         API.dataChart('/stats/definiciones').then(data => {
             this.chartDefinitions = this.generateChart("chartDefinitions", data);
         });
+
+        API.dataChart('/stats/operadores').then(data => {
+            this.chartOperators = this.generateChart("chartOperators", data);
+        });
     }
 
     public componentWillUnmount() {
@@ -30,6 +35,10 @@ class Charts extends React.Component {
 
         if (this.chartDefinitions) {
             this.chartDefinitions.dispose();
+        }
+
+        if (this.chartOperators) {
+            this.chartOperators.dispose();
         }
     }
 
@@ -45,6 +54,12 @@ class Charts extends React.Component {
                 <section>
                     <h4 className="title-section h4">¿Cúales son las definiciones más buscadas en Trashbot?</h4>
                     <div id="chartDefinitions" style={{ width: "100%", height: "380px" }}></div>
+                </section>
+
+                <section>
+                    <h4 className="title-section h4">
+                        ¿Cúales son las localidades que más consultan sobre su operador de recolección en Trashbot?</h4>
+                    <div id="chartOperators" style={{ width: "100%", height: "380px" }}></div>
                 </section>
 
             </div>

@@ -88,6 +88,8 @@ module Api
                             entities_stats["reciclar_#{entity["value"]}"] = entities_stats.key?("reciclar_#{entity["value"]}") ? (entities_stats["reciclar_#{entity["value"]}"]+1) : 1
                         elsif entity["entity"].downcase == "glosario".downcase && entity["confidence"] > 0.85 &&  (intents.select{ |i| i["intent"].downcase == "Que_es".downcase }).length > 0
                             entities_stats["definicion_#{entity["value"]}"] = entities_stats.key?("definicion_#{entity["value"]}") ? (entities_stats["definicion_#{entity["value"]}"]+1) : 1
+                        elsif entity["entity"].downcase == "localidad".downcase && entity["confidence"] > 0.85 &&  (intents.select{ |i| i["intent"].downcase == "Operador_Aseo".downcase }).length > 0
+                            entities_stats["operador_#{entity["value"]}"] = entities_stats.key?("operador_#{entity["value"]}") ? (entities_stats["operador_#{entity["value"]}"]+1) : 1
                         end
                     end
 

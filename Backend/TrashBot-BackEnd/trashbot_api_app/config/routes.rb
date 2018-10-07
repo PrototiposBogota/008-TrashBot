@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'test', to: 'users#test'
   get '/stats/reciclar', to: 'stats#reciclar'
   get '/stats/definiciones', to: 'stats#definiciones'
+  get '/stats/operadores', to: 'stats#operadores'
 
   namespace 'api' do
     namespace 'v1' do
