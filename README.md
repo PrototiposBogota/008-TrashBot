@@ -13,10 +13,6 @@
 ### Descripción
 **TrashBot** es un Chatbot desarrollado con la Inteligencia Artificial de IBM Watson, que puede ayudarte con la clasificiación de los residuos, para que aprendas a recolectar y disponer eficientemente las basuras. Puedes realizarle preguntas en lenguaje natural como si tuvieras a una persona del otro lado respondiendo a tus inquietudes.
 
-<img src="https://storage.googleapis.com/trashbot-react-build/gifs/cartones.gif"
-     alt="Donde se desecha el cartón"
-     style="float: left;" />
-
 **TrashBot conoce términos:**
 
 TrashBot está en capacidad de responder a las preguntas o inquietudes que tengas relacionadas con el reciclaje, como por ejemplo: 
@@ -26,6 +22,10 @@ TrashBot está en capacidad de responder a las preguntas o inquietudes que tenga
    - Define residuo,
    - Entre otras.
 
+<img 
+    src="https://storage.googleapis.com/trashbot-react-build/gifs/escombro.gif"
+    alt="Que es un escombro" 
+/>
 
 **TrashBot sabe cómo desechar los materiales:**
 
@@ -34,10 +34,26 @@ TrashBot conoce las normas vigentes de reciclaje que aplican si estás en tu cas
    - Deseo desechar vidrio,
    - Deseo reciclar plásticos.
 
+<img 
+    src="https://storage.googleapis.com/trashbot-react-build/gifs/cartones.gif"
+    alt="Donde debo depositar el cartón" 
+/>
+
 Además, si no tienes claro como debes separar los materiales en cada una de las bolsas, puedes recurrir a él y preguntarle, por ejemplo:
    - ¿Cuáles residuos van en la bolsa blanca?
    - ¿Qué debo desechar en la bolsa roja? 
 
+**TrashBot sabe cúal es el operador de aseo en tu localidad:**
+
+Puedes preguntarle acerca del operador de aseo de acuerdo al nombre de tu localidad, por ejemplo:
+   - Quiénes son los encargados de recolectar basura en Chapinero.
+   - Cual es operador de aseo en Suba.
+   - Quién realiza la recolección de basura en Usme.
+
+<img 
+    src="https://storage.googleapis.com/trashbot-react-build/gifs/enChapinero.gif"
+    alt="Quienes son los encargados de recolectar basura en Chapinero" 
+/>
 
 **Eventos:**
 
