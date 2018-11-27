@@ -130,6 +130,7 @@ class Register extends React.Component<IRegisterProps, IUserToRegister> {
                             <TextField
                                 required={true}
                                 id="password"
+                                type="password"
                                 name="password"
                                 label="Contraseña"
                                 fullWidth={true}
@@ -140,6 +141,7 @@ class Register extends React.Component<IRegisterProps, IUserToRegister> {
 
                         <Grid item={true} xs={12} sm={6}>
                             <TextField
+                                type="password"
                                 required={true}
                                 id="lastName"
                                 name="lastName"
